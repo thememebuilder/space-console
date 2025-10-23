@@ -2,7 +2,7 @@ import styles from './Contact.module.css';
 
 function Contact() {
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} glass-panel`}>
       <header className={styles.header}>
         <h1>Partner with Space Console</h1>
         <p>
@@ -12,11 +12,11 @@ function Contact() {
       </header>
 
       <div className={styles.content}>
-        <div className={styles.panel}>
+        <div className={`${styles.panel} glass-panel`}>
           <h2>Contact</h2>
           <p>hello@space-console.com</p>
         </div>
-        <div className={styles.panel}>
+        <div className={`${styles.panel} glass-panel`}>
           <h2>What to include</h2>
           <ul>
             <li>Current stack and bottlenecks</li>
