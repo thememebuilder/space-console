@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Logo from '../Logo/Logo.tsx';
+import Logo from '../Logo/Logo';
 import styles from './Header.module.css';
 
 const links = [
