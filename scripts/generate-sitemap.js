@@ -1,6 +1,9 @@
-// Simple sitemap generator used during build
-const fs = require('fs');
-const path = require('path');
+// Simple sitemap generator used during build (ESM)
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const routes = ['/', '/about', '/contact'];
 const base = 'https://space-console.com';
