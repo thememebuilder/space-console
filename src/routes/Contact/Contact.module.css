@@ -35,3 +35,50 @@ ul {
   flex-direction: column;
   gap: 0.4rem;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.input,
+.textarea {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.submit {
+  margin-top: 0.5rem;
+  align-self: start;
+}
+
+.success {
+  color: var(--color-text-primary);
+  background: rgba(0,0,0,0.2);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.error {
+  color: var(--color-text-primary);
+  background: rgba(139,0,0,0.12);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
