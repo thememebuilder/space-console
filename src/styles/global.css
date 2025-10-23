@@ -1,14 +1,87 @@
 :root {
   color-scheme: light dark;
-  --color-background: #0f0f10;
-  --color-surface: #161617;
-  --color-surface-contrast: #f6f7f8;
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #a0a0a5;
-  --color-accent: #ededf0;
-  --color-border: #2a2b2e;
+  /* Monochrome palette: black, white, greys */
+  --color-background: #0b0b0b; /* near-black */
+  --color-surface: #121212;    /* surface */
+  --color-surface-2: #1b1b1b;
+  --color-surface-contrast: #ffffff; /* used for the lightest surfaces */
+  --color-text-primary: #ffffff; /* white */
+  --color-text-secondary: #c6c6c6; /* light grey */
+  --color-muted: #9e9e9e; /* mid grey */
+  --color-accent: #e6e6e6; /* subtle highlight */
+  --color-border: #2b2b2b; /* dark grey border */
   --font-family-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     Arial, sans-serif;
+  --font-size-base: 16px;
+  --type-scale-ratio: 1.25;
+
+  --fs-xs: 0.8rem;   /* 13px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-md: 1rem;     /* 16px (base) */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.5rem;   /* 24px */
+  --fs-2xl: 2rem;    /* 32px */
+  --fs-3xl: 2.5rem;  /* 40px */
+
+  --fw-regular: 400;
+  --fw-medium: 600;
+  --fw-bold: 700;
+
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/* Liquid glass design tokens and utilities */
+:root {
+  /* glass tint colors (monochrome) */
+  --glass-tint: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --glass-highlight: rgba(255,255,255,0.03);
+  --glass-cta-bg: rgba(255,255,255,0.06);
+  --glass-cta-bg-hover: rgba(255,255,255,0.09);
+}
+
+/* Apply glass effect to a container */
+.glass-panel {
+  background: linear-gradient(180deg, var(--glass-tint), rgba(255,255,255,0.02));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  padding: var(--space-md);
+}
+
+/* CTA button with glassy look */
+.glass-cta {
+  background: var(--glass-cta-bg);
+  color: var(--color-text-primary);
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  font-weight: var(--fw-medium);
+  transition: background 160ms ease, transform 120ms ease;
+}
+.glass-cta:hover {
+  background: var(--glass-cta-bg-hover);
+  transform: translateY(-2px);
+}
+.glass-cta:active {
+  transform: translateY(0);
+}
+
+/* subtle inset highlight for glass surfaces */
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
 }
 
 *,
@@ -19,7 +92,7 @@
 
 html {
   font-family: var(--font-family-sans);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   background-color: var(--color-background);
   color: var(--color-text-primary);
 }
@@ -76,4 +149,20 @@ button {
   background: none;
   cursor: pointer;
   color: inherit;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: var(--fw-medium);
+  transition: background 160ms ease;
+}
+.button-primary:hover {
+  background: var(--color-primary-600);
+}
+.button-primary:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 20%, white);
+  outline-offset: 3px;
 }

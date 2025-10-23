@@ -62,14 +62,37 @@ outes/ � route components
 - [X] Launch first version
 
 ### Milestone 2 � Improve Look & Content
-- [ ] Define visual language (colors, type scale)
-- [ ] Upgrade styling (Tailwind or CSS refactor)
-- [ ] Add SEO basics (title/description, Open Graph, sitemap, robots)
-- [ ] Add analytics (e.g., Vercel Analytics or Plausible)
-- [ ] Add favicon, social preview images
+- [X] Define visual language (colors, type scale)
+  - Proposed tokens: --color-primary, --color-accent, --color-bg, --color-surface, --color-text-primary, --color-text-secondary
+  - Type scale: base 16px with tokens --fs-md (1rem), --fs-lg (1.125rem), --fs-xl (1.5rem), etc.
+  - Spacing: 4/8/12/16/24/32px scale
+  - Accessibility: aim for 4.5:1 contrast for body text; visible focus ring for interactive elements
+- [X] Upgrade styling (Tailwind or CSS refactor)
+- [X] Add SEO basics (title/description, Open Graph, sitemap, robots)
+- [X] Add analytics (e.g., Vercel Analytics or Plausible)
+- [X] Add favicon, social preview images
+
+## Analytics & SEO
+
+Analytics is opt-in and safe by default. We provide a small initializer at `src/lib/analytics.ts`.
+
+To enable Plausible:
+
+1. Set the environment variable `VITE_ANALYTICS_PROVIDER=plausible` and `VITE_PLAUSIBLE_DOMAIN=your-domain.com` in Vercel.
+2. The site will load Plausible's script only in production when configured.
+
+To enable Vercel Analytics or a custom serverless provider:
+
+1. Set `VITE_ANALYTICS_PROVIDER=vercel` and `VITE_VERCEL_SCRIPT` to the script URL in your environment.
+
+Favicons & images (image-free option)
+
+- The project includes a tiny SVG data-URI favicon in `index.html` so you don't need to add image assets.
+- When you're ready to add social/open graph images, place them in `public/` and update `index.html` meta tags (`og:image` and `twitter:image`).
+
 - [ ] Improve performance (code splitting, image optimization)
 
-### Milestone 3 � Enhancements
+### Milestone 3 Enhancements
 - [ ] Add blog/news or changelog (optional)
 - [ ] Add forms (Contact with email service)
 - [ ] Accessibility pass (keyboard nav, aria labels)

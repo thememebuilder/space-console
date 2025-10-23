@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && node ./scripts/generate-sitemap.js && vite build",
     "preview": "vite preview",
+    "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write ."
   },
@@ -16,6 +17,8 @@
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
+    "@testing-library/dom": "^9.3.4",
+    "vitest": "^0.34.4",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.2",
     "@typescript-eslint/eslint-plugin": "^7.16.1",

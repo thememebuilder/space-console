@@ -10,7 +10,7 @@ const links = [
 
 function Header() {
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} glass-panel`}>
       <Logo />
       <nav className={styles.nav}>
         {links.map((link) => (
