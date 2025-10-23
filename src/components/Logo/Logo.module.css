@@ -1,0 +1,10 @@
+.logo {
+  text-transform: lowercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+}
+
+.accent {
+  color: var(--color-accent);
+}

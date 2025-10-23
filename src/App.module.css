@@ -1,0 +1,15 @@
+.app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+.main {
+  flex: 1;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 4rem);
+}

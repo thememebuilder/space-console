@@ -1,0 +1,13 @@
+.footer {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+}

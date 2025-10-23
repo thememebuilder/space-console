@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 2vw, 2rem);
+  max-width: min(100%, 58rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.summary {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.card {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgba(22, 22, 23, 0.9), rgba(12, 12, 13, 0.9));
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+}

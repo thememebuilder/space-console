@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light dark;
+  --color-background: #0f0f10;
+  --color-surface: #161617;
+  --color-surface-contrast: #f6f7f8;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a0a0a5;
+  --color-accent: #ededf0;
+  --color-border: #2a2b2e;
+  --font-family-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family-sans);
+  font-size: 16px;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.2rem;
+  height: 0.1rem;
+  background: var(--color-text-secondary);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+a:hover::after,
+a:focus-visible::after {
+  opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
